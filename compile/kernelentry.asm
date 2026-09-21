@@ -1,0 +1,8 @@
+BITS 32
+extern kmain
+global _start
+_start:
+    call kmain
+    cli
+    hlt
+    jmp $
