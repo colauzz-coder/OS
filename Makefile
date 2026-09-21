@@ -14,6 +14,7 @@ SECTOR2_SRC := boot/sector2.asm
 KERNEL_ENTRY_SRC := $(BUILD)/kernelentry.asm
 KERNEL_SRC := $(KERNEL)/kernel.c
 IDT_SRC := $(KERNEL)/idt.c
+IO_SRC := $(KERNEL)
 LINKER_SCRIPT := $(BUILD)/linker.ld
 
 BOOTLOADER_BIN := $(BUILD)/bootloader.bin
