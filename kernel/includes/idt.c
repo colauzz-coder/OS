@@ -17,7 +17,7 @@ static IDTRStruct IDTR;
 
 void SetIDTDescriptor(uint8_t Number, uint32_t Base, uint16_t Selector, uint8_t Flags){ //Configurates Each Entry(256 Entries) From The IDT, Each One Has 8 Bytes
     IDT[Number].ISRLow = (Base & 0xFFFF);
-    IDT[Number].Selector = 0x08;
+    IDT[Number].Selector = Selector;
     IDT[Number].Reserved = 0;
     IDT[Number].Attributes = Flags;
     IDT[Number].ISRHigh = Base >> 16; //(Base >> 16) & 0xFFFF Also Works The Same Way
