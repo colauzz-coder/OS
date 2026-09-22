@@ -9,6 +9,6 @@
 #define VGA_GREEN 0x2
 #define VGA_PURPLE 0x05
 void KPrint(char* Text, volatile uint8_t Color);
-void KPrintln(char* Text, volatile uint8_t Color)
+void KPrintln(char* Text, volatile uint8_t Color);
 void ClearScreen();
 #endif

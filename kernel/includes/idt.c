@@ -15,7 +15,7 @@ typedef struct{
 } __attribute__((packed)) IDTRStruct;
 static IDTRStruct IDTR;
 
-void SetIDTDescriptor(uint8_t Number, uint32_t Base, uint8_t Flags){ //Configurates Each Entry(256 Entries) From The IDT, Each One Has 8 Bytes
+void SetIDTDescriptor(uint8_t Number, uint32_t Base, uint16_t Selector, uint8_t Flags){ //Configurates Each Entry(256 Entries) From The IDT, Each One Has 8 Bytes
     IDT[Number].ISRLow = (Base & 0xFFFF);
     IDT[Number].Selector = 0x08;
     IDT[Number].Reserved = 0;
@@ -31,15 +31,4 @@ void InitIDT(){
     }
     __asm__ __volatile__("lidt (%0)" : : "r"(&IDTR)); //Loads The IDT
 }
-
-inline void outb(uint16_t Port, uint8_t Data){
-    __asm __volatile__("outb %0, %1" : : "a"(Data), "Nd"(Port)); //Sends Data To The Input/Output Port 0x60
-}
-
-inline void inb(uint16_t Port){
-    uint8_t Return
-    __asm__ __volatile__("inb %1, %0" : "=a"(Return) : "Nd"(Port)); //Sends The Value From The Input/Output Port(0x60) Inside The Return
-    return Return;
-}
-
 
