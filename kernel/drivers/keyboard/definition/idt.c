@@ -1,5 +1,5 @@
-#include "idt.h"
-#include "types.h"
+#include "../headers/idt.h"
+#include "../../../lib/types.h"
 typedef struct{
     uint16_t ISRLow; //The ISR(Handler) Address Is 32 Bit, But It Is Separated Into 2 16 Bit Parts, This Is The Lower Part
     uint16_t Selector; //The GDT Segment Selector That The CPU Will Load Into Before Calling The ISR(Handler), It Uses The Code Segment(CS)

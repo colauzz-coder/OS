@@ -1,6 +1,6 @@
-#include "../headers/idt.h"
-#include "../headers/types.h"
-#include "../headers/vga.h"
+#include "../drivers/keyboard/headers/idt.h"
+#include "../lib/types.h"
+#include "../drivers/vga/headers/vga.h"
 extern void KeyboardHandlerStub(void);
 void kmain(){
     ClearScreen();

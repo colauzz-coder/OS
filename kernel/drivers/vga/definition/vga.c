@@ -1,5 +1,5 @@
-#include "types.h"
-#include "vga.h"
+#include "../../../lib/types.h"
+#include "../headers/vga.h"
 #define VGA_ADDRESS 0xB8000
 #define MaxColumns 80
 #define MaxRows 25
@@ -38,7 +38,6 @@ void KPrintln(char* Text, volatile uint8_t Color){
             Column = 0;
             Row++;
         }
-        uint32_t NextRow = 0xB8000 + 160;
         uint32_t Offset = (Row * 80 + Column) * 2;
         VGA[Offset] = Text[i];
         VGA[Offset + 1] = Color;
