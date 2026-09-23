@@ -2,12 +2,19 @@ ENTRY(_start)
 
 SECTIONS
 {
-    . = 0x10000;
+    .text 0x10000 : {
+        *(.text)
+    }
 
-    .text   : { *(.text*) }
-    .rodata : { *(.rodata*) }
-    .data   : { *(.data*) }
-    .bss    : { *(.bss*) *(COMMON) }
+    .rodata : {
+        *(.rodata)
+    }
 
-    /DISCARD/ : { *(.comment) *(.eh_frame) *(.note*) }
+    .data : {
+        *(.data)
+    }
+
+    .bss : {
+        *(.bss)
+    }
 }
