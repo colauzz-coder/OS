@@ -1,4 +1,5 @@
 #include "../headers/io.h"
+#include <stdint.h>
 void outb(uint16_t Port, uint8_t Data){
     __asm__ __volatile__("outb %0, %1" : : "a"(Data), "Nd"(Port)); //Sends Data To The Input/Output Port 0x60
 }

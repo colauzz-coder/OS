@@ -1,5 +1,6 @@
 #include "../headers/io.h"
 #include "../headers/pic.h"
+#include <stdint.h>
 #define PIC1_COMMAND 0x20 //Master PIC
 #define PIC1_DATA 0x21 //Master PIC
 #define PIC2_COMMAND 0xA0 //Slave PIC

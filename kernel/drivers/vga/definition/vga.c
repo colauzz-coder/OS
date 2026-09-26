@@ -1,4 +1,4 @@
-#include "../../../lib/types.h"
+#include <stdint.h>
 #include "../headers/vga.h"
 #define VGA_ADDRESS 0xB8000
 #define MaxColumns 80
