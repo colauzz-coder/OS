@@ -1,5 +1,6 @@
 #ifndef VGA_H
 #define VGA_H
+#include <stdint.h>
 #define VGA_ADDRESS 0xB8000
 #define MaxColumns 80
 #define MaxRows 25
